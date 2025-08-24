@@ -1,12 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import { Navigation } from '@/components/navigation/Navigation';
+import { Hero } from '@/components/sections/Hero';
+import { About } from '@/components/sections/About';
+import { Skills } from '@/components/sections/Skills';
+import { Projects } from '@/components/sections/Projects';
+import { Contact } from '@/components/sections/Contact';
+import { Footer } from '@/components/layout/Footer';
+import { FloatingParticles } from '@/components/3d/FloatingParticles';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen relative">
+      {/* 3D Background Particles */}
+      <FloatingParticles />
+      
+      {/* Navigation */}
+      <Navigation />
+      
+      {/* Main Sections */}
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
