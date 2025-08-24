@@ -59,7 +59,7 @@ export const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            3rd year CSE student at BUP with 3.78 CGPA | Passionate about creating impactful projects 
+            4th year CSE student at BUP with 3.78 CGPA | Passionate about creating impactful projects 
             that simplify life and help others
           </motion.p>
           
@@ -69,7 +69,10 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            <Button className="neon-glow animate-pulse-slow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg">
+            <Button 
+              className="neon-glow animate-pulse-slow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg"
+              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               View My Projects
             </Button>
             <Button variant="outline" className="glass-card border-primary/20 hover:bg-primary/10 px-8 py-3 text-lg">

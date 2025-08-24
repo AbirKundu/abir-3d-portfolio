@@ -31,7 +31,7 @@ export const About = () => {
             <Card className="glass-card p-8 neon-glow">
               <h3 className="text-2xl font-bold mb-4 text-primary">My Journey</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I'm Abir Kundu, a 3rd-year CSE student at Bangladesh University of Professionals (BUP) 
+                I'm Abir Kundu, a <span className="text-primary font-semibold">4th-year CSE student</span> at Bangladesh University of Professionals (BUP) 
                 with a CGPA of 3.78. I'm passionate about software engineering, problem solving, and 
                 creating impactful projects that simplify life and help others.
               </p>
@@ -74,11 +74,22 @@ export const About = () => {
 
             <Card className="glass-card p-6 neon-glow">
               <h4 className="text-xl font-semibold mb-3 text-primary">🎓 Academic Excellence</h4>
-              <ul className="text-muted-foreground space-y-1">
-                <li><strong>BUP CSE:</strong> CGPA 3.78</li>
-                <li><strong>HSC:</strong> Golden A+</li>
-                <li><strong>SSC:</strong> Golden A+</li>
-              </ul>
+              <div className="space-y-2">
+                <div>
+                  <h5 className="font-semibold text-primary">B.Sc. CSE - BUP</h5>
+                  <p className="text-sm text-muted-foreground">4th Year | CGPA: 3.78</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-primary">HSC</h5>
+                  <p className="text-sm text-muted-foreground">Dhaka Residential Model College (DRMC)</p>
+                  <p className="text-xs text-accent">Golden A+</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-primary">SSC</h5>
+                  <p className="text-sm text-muted-foreground">GGMSC</p>
+                  <p className="text-xs text-accent">Golden A+</p>
+                </div>
+              </div>
             </Card>
           </motion.div>
         </div>

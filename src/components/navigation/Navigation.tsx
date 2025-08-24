@@ -77,7 +77,24 @@ export const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <Button variant="outline" size="sm" className="glass-card border-primary/20">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="glass-card border-primary/20"
+              onClick={() => {
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'fixed inset-0 z-50 bg-background/80 backdrop-blur-sm';
+                mobileMenu.innerHTML = `
+                  <div class="fixed top-4 right-4">
+                    <button class="p-2 rounded-lg bg-background border border-border" onclick="this.parentElement.parentElement.remove()">✕</button>
+                  </div>
+                  <div class="flex flex-col items-center justify-center h-full space-y-6">
+                    ${navItems.map(item => `<button class="text-lg font-medium text-foreground hover:text-primary" onclick="document.querySelector('${item.href}').scrollIntoView({behavior:'smooth'}); this.parentElement.parentElement.remove();">${item.name}</button>`).join('')}
+                  </div>
+                `;
+                document.body.appendChild(mobileMenu);
+              }}
+            >
               Menu
             </Button>
           </div>

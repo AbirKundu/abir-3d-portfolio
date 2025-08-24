@@ -9,49 +9,61 @@ const featuredProjects = [
     title: "Subscription System React Project",
     description: "React + TypeScript subscription workflow project with modern UI and robust architecture.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    year: "2024",
+    year: "2025",
     category: "Frontend/React",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/AbirKundu/Subscription-Sytem-React-Project.git",
+    liveUrl: null
   },
   {
     title: "Gita Guru Knowledge Hub",
     description: "Knowledge platform built with TypeScript for spiritual and educational content.",
     tech: ["TypeScript", "React", "Firebase"],
-    year: "2024",
+    year: "2025",
     category: "Frontend/React",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/AbirKundu/gita-guru-knowledge-hub.git",
+    liveUrl: "https://gita-guru-by-abir-kundu.vercel.app"
   },
   {
     title: "React Native Tic-Tac-Toe",
     description: "Interactive mobile game using React Native with smooth animations and multiplayer support.",
     tech: ["React Native", "JavaScript", "Expo"],
-    year: "2024",
+    year: "2025",
     category: "Mobile App",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/AbirKundu/react-native-tic-tac-toe.git",
+    liveUrl: null
   },
   {
     title: "React Movie App",
     description: "Movie database web app with search functionality and responsive UI.",
     tech: ["React", "JavaScript", "API Integration"],
-    year: "2024",
+    year: "2025",
     category: "Frontend/React",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/AbirKundu/React-Movie-App.git",
+    liveUrl: null
   },
   {
     title: "Crime Watch Bangla Alert",
     description: "A social impact project built with TypeScript for community safety.",
     tech: ["TypeScript", "React", "Firebase"],
-    year: "2024",
+    year: "2025",
     category: "Frontend/React",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/AbirKundu/crime-watch-bangla-alert.git",
+    liveUrl: "https://crime-watch-five.vercel.app"
   },
   {
     title: "Aahar Hope Share",
     description: "Community/charity project connecting food donors with those in need.",
     tech: ["TypeScript", "React", "MongoDB"],
-    year: "2024",
+    year: "2025",
     category: "Frontend/React",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/AbirKundu/aahar-hope-share.git",
+    liveUrl: "https://aahar-bup.vercel.app"
   }
 ];
 
@@ -60,28 +72,28 @@ const otherProjects = [
     title: "BUP Shuttle Companion",
     description: "Java-based transport assistant app for students with route optimization.",
     tech: ["Java", "Android Studio", "SQLite"],
-    year: "2023",
+    year: "2024",
     category: "Academic/Java"
   },
   {
     title: "Data Entry Form Project",
     description: "HTML-based form project with validation and data processing.",
     tech: ["HTML", "CSS", "JavaScript"],
-    year: "2023",
+    year: "2024",
     category: "Web Development"
   },
   {
     title: "GamendBubble",
     description: "HTML/CSS game with interactive animations and score tracking.",
     tech: ["HTML", "CSS", "JavaScript"],
-    year: "2023",
+    year: "2024",
     category: "Web Development"
   },
   {
     title: "Arduino UNO Project",
     description: "IoT project with sensors and automation using Arduino programming.",
     tech: ["Arduino", "C++", "IoT"],
-    year: "2023",
+    year: "2024",
     category: "Hardware/IoT"
   }
 ];
@@ -145,12 +157,32 @@ export const Projects = () => {
                 </div>
                 
                 <div className="flex gap-3 mt-auto">
-                  <Button variant="outline" size="sm" className="glass-card border-primary/20 hover:bg-primary/10">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="glass-card border-primary/20 hover:bg-primary/10"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
+                  >
                     View Code
                   </Button>
-                  <Button size="sm" className="bg-primary hover:bg-primary/90">
-                    Live Demo
-                  </Button>
+                  {project.liveUrl ? (
+                    <Button 
+                      size="sm" 
+                      className="bg-primary hover:bg-primary/90 relative overflow-hidden group"
+                      onClick={() => window.open(project.liveUrl, '_blank')}
+                    >
+                      <span className="relative z-10">Live Demo</span>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="absolute top-0 left-0 w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                        <div className="absolute top-1 right-1 w-1 h-1 bg-red-400 rounded-full animate-bounce"></div>
+                        <div className="absolute bottom-0 left-2 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-ping"></div>
+                      </div>
+                    </Button>
+                  ) : (
+                    <Button size="sm" className="bg-muted hover:bg-muted/90 text-muted-foreground" disabled>
+                      Coming Soon
+                    </Button>
+                  )}
                 </div>
               </Card>
             </motion.div>
@@ -215,7 +247,10 @@ export const Projects = () => {
             <p className="text-muted-foreground mb-6">
               Check out my complete project portfolio including academic work, assignments, and experimental projects.
             </p>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3"
+              onClick={() => window.open('https://github.com/AbirKundu', '_blank')}
+            >
               Visit GitHub Profile
             </Button>
           </Card>
