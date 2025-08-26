@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -94,15 +95,24 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    cursor: none; /* Hide default cursor */
   }
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     background: radial-gradient(ellipse at center, hsl(var(--background)) 0%, hsl(240 10% 1.9%) 100%);
+    cursor: none; /* Hide default cursor */
   }
   
   html {
     scroll-behavior: smooth;
+    cursor: none; /* Hide default cursor */
+  }
+
+  /* Superhero hover effects */
+  button:hover, a:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
   }
 }
 
@@ -129,5 +139,14 @@ All colors MUST be HSL.
   
   .neon-glow-cyan {
     @apply shadow-lg shadow-accent/25;
+  }
+
+  /* Superhero cursor styles */
+  .cursor-main {
+    backdrop-filter: blur(8px);
+  }
+
+  .cursor-trail {
+    backdrop-filter: blur(4px);
   }
 }
