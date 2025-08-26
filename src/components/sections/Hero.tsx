@@ -1,9 +1,61 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { FloatingCard } from '@/components/3d/FloatingCard';
+import { Download } from 'lucide-react';
 
 export const Hero = () => {
+  const handleResumeDownload = () => {
+    // Create a downloadable resume content
+    const resumeContent = `
+ABIR KUNDU
+Aspiring Software Engineer
+4th year CSE student at BUP | CGPA: 3.78
+
+Contact:
+📧 abirkundu2025@gmail.com
+📍 Mirpur DOHS, Dhaka 1216
+🏡 Hometown: Patuakhali
+🎯 Dream: PhD in CS, USA by 2028
+
+Education:
+• Bachelor of Science in Computer Science Engineering
+  Bangladesh University of Professionals (BUP)
+  CGPA: 3.78 (2021-2025)
+
+Skills:
+• Programming: Python, C/C++, Java, JavaScript, TypeScript, React, Node.js, PHP, SQL
+• Tools: VS Code, Git/GitHub, Adobe Photoshop, Figma, Microsoft Office, Vercel
+• Languages: Bangla (Advanced), English (Advanced), Hindi (Intermediate), French (Beginner)
+• AI-Assisted Development & Prompt Engineering
+
+Experience:
+• Volunteer - IEEE BUP Student Branch (Jan 2023 – Present)
+• Member & Designer - CS Club, Robotics Club, InfoTech Club (Feb 2022 – Present)  
+• Teaching & Mentoring (June 2021 – Present)
+• Freelance Projects & YouTube Creator
+
+Interests:
+• Machine Learning & Cybersecurity
+• Web Development & UI/UX Design
+• Problem Solving & Algorithms
+• Teaching & Mentoring
+• Graphic Design
+• Cricket & Gaming
+    `;
+
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Abir_Kundu_Resume.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
       {/* 3D Floating Elements */}
@@ -75,7 +127,12 @@ export const Hero = () => {
             >
               View My Projects
             </Button>
-            <Button variant="outline" className="glass-card border-primary/20 hover:bg-primary/10 px-8 py-3 text-lg">
+            <Button 
+              variant="outline" 
+              className="glass-card border-primary/20 hover:bg-primary/10 px-8 py-3 text-lg"
+              onClick={handleResumeDownload}
+            >
+              <Download className="w-4 h-4 mr-2" />
               Download Resume
             </Button>
           </motion.div>
@@ -87,7 +144,7 @@ export const Hero = () => {
             transition={{ delay: 1.2, duration: 0.8 }}
           >
             <span className="flex items-center gap-2">
-              📍 Mohammadpur, Dhaka 1207
+              📍 Mirpur DOHS, Dhaka 1216
             </span>
             <span className="flex items-center gap-2">
               🏡 Hometown: Patuakhali

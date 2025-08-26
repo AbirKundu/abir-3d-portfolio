@@ -131,16 +131,6 @@ const SuperheroCursor = () => {
           duration: 0.1
         }}
       />
-
-      {/* Hero indicator */}
-      <motion.div
-        className="fixed top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold pointer-events-none z-50 glass-card"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        key={cursorVariant}
-      >
-        🦸‍♂️ {cursorVariant.toUpperCase()}
-      </motion.div>
     </>
   );
 };
