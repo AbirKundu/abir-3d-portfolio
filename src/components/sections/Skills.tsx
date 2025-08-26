@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
@@ -6,7 +7,7 @@ import { FloatingCard } from '@/components/3d/FloatingCard';
 const skillCategories = [
   {
     title: "Programming Languages",
-    skills: ["Python", "C", "C++", "Java", "JavaScript", "SQL"],
+    skills: ["Python", "C", "C++", "Java", "JavaScript", "TypeScript", "SQL", "PHP"],
     color: "#0ea5e9"
   },
   {
@@ -21,13 +22,18 @@ const skillCategories = [
   },
   {
     title: "Tools & Platforms",
-    skills: ["GitHub", "Cisco Packet Tracer", "MySQL", "emu8086", "Flex & Bison", "Android Studio"],
+    skills: ["GitHub", "VS Code", "Cisco Packet Tracer", "MySQL", "emu8086", "Flex & Bison", "Android Studio", "Vercel"],
     color: "#f59e0b"
   },
   {
-    title: "Creative & Soft Skills",
-    skills: ["Graphic Design (4+ years)", "Adobe Photoshop", "Canva", "Leadership", "Teaching & Mentoring", "Content Creation"],
+    title: "Creative & Design Tools",
+    skills: ["Adobe Photoshop", "Figma", "Canva", "Microsoft Office", "Graphic Design (4+ years)"],
     color: "#ef4444"
+  },
+  {
+    title: "AI & Modern Development",
+    skills: ["AI-Assisted Development", "Prompt Engineering", "GitHub Copilot", "ChatGPT Integration", "Git/GitHub"],
+    color: "#10b981"
   }
 ];
 
@@ -95,13 +101,40 @@ export const Skills = () => {
           ))}
         </div>
 
+        {/* Specialized Skills Highlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 mb-16"
+        >
+          <h3 className="text-2xl font-bold mb-6 text-center gradient-text">Specialized Expertise</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="glass-card p-6 neon-glow">
+              <h4 className="text-lg font-semibold mb-3 text-primary">🤖 AI-Assisted Development</h4>
+              <p className="text-sm text-muted-foreground">
+                Experienced in utilizing AI tools (ChatGPT, GitHub Copilot) for efficient coding, 
+                debugging, and project prototyping.
+              </p>
+            </Card>
+            <Card className="glass-card p-6 neon-glow-purple">
+              <h4 className="text-lg font-semibold mb-3 text-secondary">⚡ Prompt Engineering</h4>
+              <p className="text-sm text-muted-foreground">
+                Skilled in crafting precise prompts for generating structured code, solving 
+                algorithmic problems, and designing UI/UX using AI models.
+              </p>
+            </Card>
+          </div>
+        </motion.div>
+
         {/* Experience Highlights */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 grid md:grid-cols-3 gap-6"
+          className="grid md:grid-cols-4 gap-6"
         >
           <Card className="glass-card p-6 text-center neon-glow">
             <div className="text-3xl font-bold text-primary mb-2">4+</div>
@@ -114,6 +147,10 @@ export const Skills = () => {
           <Card className="glass-card p-6 text-center neon-glow-cyan">
             <div className="text-3xl font-bold text-accent mb-2">3.78</div>
             <div className="text-muted-foreground">CGPA at BUP</div>
+          </Card>
+          <Card className="glass-card p-6 text-center neon-glow">
+            <div className="text-3xl font-bold text-primary mb-2">15+</div>
+            <div className="text-muted-foreground">Technical Talks Delivered</div>
           </Card>
         </motion.div>
       </div>
