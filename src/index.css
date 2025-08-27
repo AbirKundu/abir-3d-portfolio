@@ -149,4 +149,114 @@ All colors MUST be HSL.
   .cursor-trail {
     backdrop-filter: blur(4px);
   }
+
+  /* ZigZag Border Animation */
+  .zigzag-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .zigzag-container {
+    position: absolute;
+    display: flex;
+    gap: 38px;
+  }
+
+  .zigzag-container-rotated {
+    transform: rotate(180deg);
+    z-index: -1;
+  }
+
+  .zigzag-item {
+    display: block;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(315deg);
+  }
+
+  .zigzag-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)));
+    transform: translateX(-100%);
+    animation: zigzag-animate-before 4s linear infinite;
+    animation-delay: calc(1s * var(--i));
+  }
+
+  .zigzag-item::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, hsl(var(--primary)));
+    transform: translateY(-100%);
+    animation: zigzag-animate-after 4s linear infinite;
+    animation-delay: calc(1s * var(--i));
+  }
+
+  .zigzag-item span {
+    position: absolute;
+    cursor: pointer;
+    inset: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--background));
+    outline: 1px solid hsl(var(--border));
+    transition: 0.3s linear;
+    pointer-events: auto;
+  }
+
+  .zigzag-container:nth-child(1) .zigzag-item span:hover {
+    outline-offset: -5px;
+    outline-color: hsl(var(--primary));
+  }
+
+  .zigzag-item span b {
+    font-weight: normal;
+    font-size: 2em;
+    transform: rotate(45deg);
+    color: hsl(var(--foreground));
+  }
+
+  @keyframes zigzag-animate-before {
+    0% {
+      transform: translateX(-100%);
+    }
+    25%, 100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes zigzag-animate-after {
+    0%, 12.5% {
+      transform: translateY(-100%);
+    }
+    37.5%, 100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .zigzag-container {
+      gap: 19px;
+    }
+    .zigzag-item {
+      height: 50px;
+      width: 50px;
+    }
+    .zigzag-item span b {
+      font-size: 1em;
+    }
+  }
 }
