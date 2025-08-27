@@ -211,15 +211,14 @@ All colors MUST be HSL.
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--background));
-    outline: 1px solid hsl(var(--border));
+    background-color: transparent;
+    outline: none;
     transition: 0.3s linear;
-    pointer-events: auto;
+    pointer-events: none;
   }
 
   .zigzag-container:nth-child(1) .zigzag-item span:hover {
-    outline-offset: -5px;
-    outline-color: hsl(var(--primary));
+    /* Hover effects removed */
   }
 
   .zigzag-item span b {

@@ -19,9 +19,7 @@ export const ZigZagBorder: React.FC<ZigZagBorderProps> = ({
             className="zigzag-item"
             style={{ '--i': index } as React.CSSProperties}
           >
-            <span>
-              <b>{index + 1}</b>
-            </span>
+            <span></span>
           </div>
         ))}
       </div>
@@ -34,9 +32,7 @@ export const ZigZagBorder: React.FC<ZigZagBorderProps> = ({
             className="zigzag-item"
             style={{ '--i': index } as React.CSSProperties}
           >
-            <span>
-              <b>{index + 1}</b>
-            </span>
+            <span></span>
           </div>
         ))}
       </div>
