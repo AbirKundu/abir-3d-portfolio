@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import { ZigZagBorder } from "@/components/3d/ZigZagBorder"
 import { cn } from "@/lib/utils"
 
 const Card = React.forwardRef<
@@ -9,11 +9,14 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      "rounded-lg border bg-card text-card-foreground shadow-sm relative overflow-hidden",
       className
     )}
     {...props}
-  />
+  >
+    <ZigZagBorder className="opacity-30 pointer-events-none" itemCount={4} />
+    {props.children}
+  </div>
 ))
 Card.displayName = "Card"
 

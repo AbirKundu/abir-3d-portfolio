@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { FloatingCard } from '@/components/3d/FloatingCard';
-import { ZigZagBorder } from '@/components/3d/ZigZagBorder';
 import { Download } from 'lucide-react';
 
 export const Hero = () => {
@@ -59,9 +58,6 @@ Interests:
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
-      {/* ZigZag Border Animation */}
-      <ZigZagBorder className="opacity-20" />
-      
       {/* 3D Floating Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-24 h-24 opacity-60">
