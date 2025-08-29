@@ -109,7 +109,21 @@ export const About = () => {
             <span className="gradient-text">Extra Curricular Activities</span>
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Featured CR Position - Centered in first row */}
+          <div className="flex justify-center mb-8">
+            <Card className="glass-card p-8 neon-glow max-w-2xl w-full">
+              <h4 className="text-xl font-semibold mb-3 text-primary">🏛️ Elected Class Representative (CR)</h4>
+              <p className="text-sm text-accent mb-3">Department of CSE, BUP | November 7, 2024 – Present</p>
+              <ul className="text-muted-foreground space-y-2">
+                <li>• Representing the class for three consecutive semesters (July–Dec 2024, Jan–Jul 2025, Aug 2025–Present)</li>
+                <li>• Acting as a liaison between faculty and students, coordinating schedules, and resolving academic concerns</li>
+                <li>• Strengthened leadership, communication, and organizational skills through active service</li>
+              </ul>
+            </Card>
+          </div>
+          
+          {/* Other Activities in 2-column grid */}
+          <div className="grid md:grid-cols-2 gap-6">
             <Card className="glass-card p-6 neon-glow">
               <h4 className="text-lg font-semibold mb-2 text-primary">🏆 IEEE Volunteer</h4>
               <p className="text-sm text-accent mb-2">Jan 2023 – Present</p>
